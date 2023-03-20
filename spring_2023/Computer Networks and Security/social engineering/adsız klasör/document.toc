@@ -1,0 +1,20 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}OSINT}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}An example of OSINT}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Nontechnical OSINT}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Technical OSINT}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Robots.txt}{12}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Types of attacks}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Pretexting}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Phishing}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Vishing}{17}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}SMS Phishing}{18}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Baiting Techniques}{19}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Dumpster Diving}{20}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Shoulder surfing}{21}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Defense}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Against pretexting}{23}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Against phishing}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Against Baiting}{25}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Against Scareware}{26}{subsection.4.4}%
