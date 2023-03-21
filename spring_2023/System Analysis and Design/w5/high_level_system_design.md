@@ -401,6 +401,50 @@ This is a naive approach.
 * You can increase _availability_ because there are multiple machines that can take place of another if a problem occurs.
 * You have _flexibility_ because you can direct requests based on the load on the servers.
 
+---
+
+# Consistent Hashing
+
+- When you have multiple servers, you need to determine which server is going to store which requests. 
+- There are some ways to do it. One of them is using _hash_ functions and _hashmaps_.
+
+- Let's draw how it works.
+- We are going to take the hash of the request id and point it to the server. If we have $m$ servers, we are going to apply **mod m** so that we can point it to a server.
+
+
+---
+
+# Consistent Hashing
+
+- However, this creates a problem if you want to add a new server to the system.
+- We will see that previously a request was going to server $x$, but now the calculation points to server $y$. 
+  - We need to change almost everything.
+  - It is very expensive.
+
+- That is why people thought about this and came with a solution.
+
+---
+
+# Consistent Hashing
+
+Like every request, we also have a _server id_. Instead of just hashing the _request id_ we are also going to hash _server id_. 
+- In addition to this, we are going to think of our distributed system as a **ring**.
+  - This means that every server is going to be on a _point_ in this ring.
+  
+- We know that a circle (ring) consists of 360 degrees. We can easily say that there are 360 points in a circle. Remember the modular arithmetic we have done. 
+  - We are going to do something similar here.
+
+- Drawing
+
+---
+
+# Consistent Hashing
+
+* We are going to hash the server id, $hash(s_id)$. And we are going to take mod360 of it, so that it represents a _point_ in the ring.
+* Then, we do the same thing to the request id. $hash(r_id)$. 
+  * We are going to select the server which is the _next closest_ to that point on the ring.
+
+* This helps because now if we add a new server, instead of changing everything, we are only going to change those which are between the _previous_ server and the _added_ one.
 
 
 
