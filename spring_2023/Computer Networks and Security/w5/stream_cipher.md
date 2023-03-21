@@ -183,14 +183,27 @@ So, we do not use **LCG** in cryptography!
 
 ---
 
-
+<!-- _class: title -->
 # LFSR
+Linear Feedback Shift Register
 
 ---
 
 # Shift register
 
-FILL HERE
+In order to understand how these work, we need to talk about **Flip Flops**.
+- A flip flop (latch) is a data storage element which is used to store _bits_.
+  - D Flip Flop can be seen as a camera. When you look from the camera, you see the picture you want to take ($D$) but unless you press the button ($CLK$), you cannot store it ($Q$).
+    - So, when a new clock pulse comes, $D$ becomes $Q$.
+- A shift register is just D flip flops connected together by using the same clock.
+  - Let's draw it.
+
+---
+# LFSR: Linear Feedback Shift Register
+
+* Here, instead of giving the last element to the first one, we pass them through a _linear function_.
+* That linear function consists of XOR operations.
+
 
 ---
 
@@ -264,9 +277,12 @@ At this stage, we can see that these are not good candidates for _stream ciphers
   - Trivium Cipher
   - GSM
 
-LFSR's are very **quick** and cheap in hardware so very useful for low-powered devices.
-
 ---
+
+# LFSR
+
+
+LFSR's are very **quick** and cheap in hardware so very useful for low-powered devices.
 
 
 
