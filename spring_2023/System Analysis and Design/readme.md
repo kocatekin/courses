@@ -1,9 +1,12 @@
 # System analysis and Design
 
-Course includes:
+Roadmap for upnext;
 
-  - Monolith vs Microservices
-  - API
-  - Horizontal and Vertical scaling
-  - High Level System Design
-  - ..
+[ ] Monoliths
+[ ] Microservices
+[ ] Version Control Systems
+[ ] Devops
+[ ] Containerization and Virtualization
+[ ] Fault Tolerance and Resilience
+[ ] SOA
+[ ] Cap Theorem
