@@ -320,6 +320,18 @@ We can also learn some information about the website by using `whois` command.
 
 ---
 
+# DNS
+
+Actually, the browser first checks it _cache_.
+* If there is no cache, it asks the operating system.
+  * Remember _hosts_ file.
+* Then we do the DNS lookup.
+* ISPs have their own DNS servers.
+  * We connect to them by default.
+  * But we can change them to OpenDNS, GoogleDNS, etc.
+
+---
+
 # Going online
 
 After getting the IP address, browser will do _Three-way handshake_.
@@ -423,4 +435,5 @@ Actually, when we try to open this website from the browser, we cannot! It loads
 `curl -vi https://www.istanbularel.edu.tr`
 - Now we get 200 OK!
 
+---
 
