@@ -512,10 +512,6 @@ Sometimes, closures can be lightweight and efficient than creating classes, espe
 However, we should keep in mind that *lexical scoping* can be different for different languages. 
 
 
-self-note: https://bard.google.com/chat/149120b51b17a179
-
----
-
 
 
 ## Side-effects
