@@ -15,4 +15,16 @@ Exactly. You can write the code we'll write everytime you need such a thing. But
 Now, let's try to implement this Queue. 
 For that, we need to create a new class. Remember that since we are working with Java, we don't have `struct` keyword. We are going to build a class to have our data structure.
 
+First, we need to have an array.
+We are going to declare this array as a global variable, so the class methods can reach it. We also need to keep track of a **top** value, so that we know where we are going to `push()` to, or `pop()` from.
+
+```java
+int[] arr;
+int top;
+
+public Queue(int x) { //takes a constructor to init the array
+  arr = new int[x];
+
+```
+
 
