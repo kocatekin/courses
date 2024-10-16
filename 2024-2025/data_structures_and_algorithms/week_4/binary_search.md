@@ -72,4 +72,37 @@ Why, because we know the value we search is **not** the pivot (if it were, it wo
 
 So, what now? Okay, it looks like we need to put this in a loop somehow, just as we stated. We cannot do a *for* because we don't know how long this will keep on. The only thing we know is, if we find it, it means we returned; so if we are not returning; it will go on forever. 
 
-For example, we can put this in an empty while loop, and if we have the value in the array, we will eventually get *true*. But if the value is not in the array, it will go on forever!
+For example, we can put this in an empty while loop `while(1==1)`, and if we have the value in the array, we will eventually get *true*. But if the value is not in the array, it will go on forever! Check this out:
+
+```java
+public static boolean binarysearch(int x, int[] arr) {
+		int lo = 0;
+		int hi = arr.length - 1;
+		int pivot = (hi-lo)/2;
+		int i = 0;
+		
+		while(true) {
+			i++;
+			System.out.println("iteration " + i);
+			
+			int pivotNum = arr[pivot];
+			
+			if(x < pivotNum) {
+				
+				hi = pivot-1;
+				pivot = (hi-lo)/2;
+			}
+			else if(x > pivotNum) {
+				lo = pivot + 1;
+				pivot = (hi-lo)/2;
+			}
+			else {
+				return true;
+			}
+				
+		}
+		//return false;
+	}
+```
+
+So, at some point we need to understand that this number is not in the list. 
