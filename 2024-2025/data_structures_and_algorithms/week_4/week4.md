@@ -53,6 +53,20 @@ public int pop() {
 
 Again, these methods can be written differently. Here, we are creating a temporary variable, because we need to decrement the `top`. This is a clear way to see what happens.
 
+Up to this point, everything should work. However, we forgot something. Here, we are using an *array* and as we know, arrays are *static*. Which means that after some point, the queue is not going to add another element. What happens when we try to add something? Try and see for yourself!
+
+```
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+```
+
+Therefore, we need to check whether the queue is **full** if we are trying to add something. Also, we need to check whether the queue is **empty** when we are trying to *pop* something. For that reason, we will add `isFull()` and `isEmpty()` methods.
+
+```java
+public boolean isFull() {}
+public boolean isEmpty() {}
+```
+
+
 
 
 
