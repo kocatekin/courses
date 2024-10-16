@@ -66,7 +66,58 @@ public boolean isFull() {}
 public boolean isEmpty() {}
 ```
 
+In order to make this easier, we can add a `size` attribute for our queue. This is going to be a global variable again. Later, when we add a new item to queue, we are going to increment it `size++` and we are going to decrement size when we pop something!
 
+From there, we can fill in the isFull and isEmpty methods.
+
+```java
+public boolean isFull() {
+  if(size == arr.length) {
+    return true;
+  }
+  return false;
+}
+
+public boolean isEmpty() {
+  if(size == 0) {
+    return true;
+  }
+  return false;
+```
+
+Now, we created these methods. Test these methods to see whether they work or not.
+
+On to the next part. We are now going to use these methods in the `pop()` and `push()` methods, so that we don't add to a full array or we don't try to pop from an empty array.
+
+```java
+public int pop() {
+  if(!isEmpty()) {
+    int temp = arr[top];
+    top--;
+    System.out.println("popped " + temp + " from the queue!");
+    size--;
+    return temp;
+  }
+  else {
+    System.out.println("Queue is empty.");
+}
+}
+
+public void push(int x) {
+  if(!isFull()) {
+    top++;
+    arr[top] = x;
+    System.out.println("Added " + x + " to queue.");
+    size++;
+    }
+  else {
+    System.out.println("the queue is full!");
+}
+}
+```
+
+Now, we have a functioning Queue.
+      
 
 
 
