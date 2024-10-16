@@ -24,7 +24,36 @@ int top;
 
 public Queue(int x) { //takes a constructor to init the array
   arr = new int[x];
+  top = -1;
+}
+
+public void push(int x) {}
+public int pop() {}
+```
+
+Here, we are making the `top` variable -1. This is not the only solution, this is my approach. 
+Here, when we `push()`, we will increase the `top` by one, so that we are adding to location 0. 
+
+Let's fill in the other methods. 
 
 ```
+public void push(int x) {
+  top++;
+  arr[top] = x;
+  System.out.println("added " + x + " to queue.");
+}
+
+public int pop() {
+  int temp = arr[top]; //get the top value to a variable
+  top--;
+  System.out.println("removed " + temp + " from the queue.");
+  return temp;
+}
+```
+
+Again, these methods can be written differently. Here, we are creating a temporary variable, because we need to decrement the `top`. This is a clear way to see what happens.
+
+
+
 
 
