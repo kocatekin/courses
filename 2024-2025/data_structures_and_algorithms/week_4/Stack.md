@@ -100,6 +100,79 @@ To make an example in the class, we are going to use our own stack data structur
 
 For that, we are going to create a *solver* function.
 
+```java
+public static void solveRPN(String islem) {
+    //lets do it void for now, we can change it at last
+    Stack stack = new Stack(100); //arbitrary number
+    String[] params = islem.split(" ");
+    for(int i=0;i<params.length;i++) {
+        //if the character is an operation, we are going to apply it
+        //if the character is not an operation, we are going to push it  
+    }
+
+}
+```
+
+So now, we need to have a function where we actually check whether the element we have in the string array is an operation or not.
+
+```java
+public static boolean isOperation(String x) {
+    return x.equals("+") || x.equals("-") || x.equals("*") || x.equals("/");
+}
+```
+
+So, we can add this in the for loop and if the character is an operation, we are going to *pop* two numbers from the stack and apply the operation. So now, we need another function to **apply** the operation. Let's call it *doOperation*. This is going to get multiple parameters. It needs numbers and the operation. 
+
+```java
+public static int doOperation(String op, int a, int b) {
+    if(op.equals("+")) {
+        return b+a;
+    }
+    else if(op.equals("*")) {
+        return b*a;
+    }
+    else if(op.equals("/")) {
+        return b/a;
+    }
+    else if(op.equals("-")) {
+        return b-a;
+    }
+    else {
+        System.out.println("no such operation");
+        return -1;
+}
+}
+```
+
+
+So now, we know these: If the character is **not** an operation (+,-,*,/) we assume it is a valid number and add it to the stack. If it is an operation, we **pop** two values, **do** the operation and push it to the stack. The code becomes:
+
+```java
+public static void solveRPN(String islem) {
+    Stack stack = new Stack(100);
+    String[] x = islem.split(" ");
+    for(int i=0;i<x.length;i++){
+        if(!isOperation(x[i])) {
+            stack.push(Integer.parseInt(x[i])); //change to integer
+        }
+        else {
+            //it means it is an operation
+            int a = stack.pop();
+            int b = stack.pop();
+            //we need to do an operation and add it to stack
+            stack.push(doOperation(x[i], a, b));
+        }
+    }
+    System.out.println(stack.pop()); //to see the last result, because we are returning void
+}
+```
+
+You can try this code with the following examples:
+`10 2 / 3 -` should return 2
+`5 1 2 + 4 * + 3 -` should return 20
+`6 3 /` should return 2
+`2 3 + 4 *` should return 20
+
 
 
 
