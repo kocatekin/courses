@@ -82,3 +82,26 @@ When we write the code, we can start from just pop and push. They will just writ
 
 how do we understand if it is empty or full? we can check the top value? or we can check the size?
 
+---
+
+# Infix, Prefix, Postfix
+
+In our mathematics life, we do calculations as such: `(2+3)*4`. This is called **infix** notation. Because the *operation* is between the operands (numbers). We also have *prefix* and *postfix* notations. The *prefix* notation is also called **Polish notation**, **Lukasiewicz notation** or **warsaw notation**. The name comes from **Jan Lukasiewicz** who invented it, a Polish mathematician/logician. 
+
+In the *infix* notation, the equation `3+4` would be written as `+ 3 4` in *prefix* notation. We call it as such because the operation comes *before* the operands. 
+
+Later, we are introduced to *Reverse Polish Notation* (RPN) or *postfix* notation. Here, the operations follow the operands, so the previous example becomes `3 4 +`. Here, we can eliminate the parenthesis if we make sure every operation has a fixed number of operands. In computer science, this notation is used in *stack-oriented programming languages* such as Forth, PostScript, etc. 
+
+## RPN
+
+When we are doing calculations, we know the importance of precedence. So we know which operation comes first, we know we need to calculate whatever is in the parentesis, etc. However, computers doesn't know that. And although this can be put in an algorithm, it is much easier if we are able to use RPN. So, a well known pioneer in CS, Edsger W. Dijkstra invented *shunting-yard algorithm* to convert **infix** into **postfix** expressions. 
+
+To make an example in the class, we are going to use our own stack data structure to calculate a postfix expression. We are not going to implement the *shunting-yard algorithm*, we can do it later in the course. So, we will write our program to make some examples.
+
+For that, we are going to create a *solver* function.
+
+
+
+
+
+
