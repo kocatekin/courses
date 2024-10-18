@@ -17,22 +17,21 @@ public class BinarySearch {
 		int lo = 0;
 		int hi = arr.length - 1;
 		
-		int i = 0;
+		int iter = 0;
 		
 		while(lo<=hi) {
-			i++;
-			System.out.println("iteration " + i);
+			iter++;
+			System.out.println("iteration " + iter);
 			int pivot = lo + (hi-lo)/2;
-			int pivotNum = arr[pivot];
+			int pivotNum = arr[pivot]; //to make it easier
 			
 			if(x < pivotNum) {
-				
 				hi = pivot-1;
-				pivot = (hi-lo)/2;
+				pivot = lo + (hi-lo)/2;
 			}
 			else if(x > pivotNum) {
 				lo = pivot + 1;
-				pivot = (hi-lo)/2;
+				pivot = lo + (hi-lo)/2;
 			}
 			else {
 				return true;
