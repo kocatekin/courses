@@ -2,6 +2,19 @@
 
 What is a list?
 
+* An ordered *collection*. Ordered. Keep the order you added elements.
+* Also known as *sequence*
+* Indexed like arrays. You can access specific elements in a specific index.
+* Can hold *duplicate* values. (In sets, we are not able to do it)
+* User can iterate through the elements and **add**, **remove** and **update** elements.
+
+It is an **interface**. So, there are multiple implementations. In Java, one can implement a list using *ArrayList*, *LinkedList* and *Vector*. 
+
+```java
+List<String> fruits = new ArrayList<>();
+List<String> animals = new LinkedList<>();
+```
+
 # Arraylist
 
 An arraylist is different from an array. This is a good time to remember that arrays are **static*. That means the capacity doesn't change. However, we can change the elements in the array by their index. In addition, since arrays are static and *contiguous*, if we know the first element address, we can easily get the $n$th element by adding $n$ to that address. 
@@ -88,9 +101,9 @@ return removedElement;
 
 ```
 
+Since this is our own implementation, we can add more stuff for fun. For example, you can add a *reverse* method to it. Or you can add stuff for fun, such as *Thanos Flick*, etc.
 
-
-
+Lastly, if you try the original ArrayList implementation, it is not going to give you the 0 elements in the array. So, we should create a *toString* method to do the same. Try it at home.
 
 
 
