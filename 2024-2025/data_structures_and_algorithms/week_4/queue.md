@@ -14,19 +14,21 @@ Check out: https://docs.oracle.com/javase/8/docs/api/?java/util/Queue.html
 
 In this page you will see that Queue is an **interface**. 
 
-So, we are implementing Queues using arrays just as a practice to better understand how queues work. As stated before, we imagine a *line* and the line has a **head** and a **tail**.
+So, we are implementing Queues using arrays just as a practice to better understand how queues work. As stated before, we imagine a *line* and the line has a **front** and a **rear**.
 
 ```java
 class Queue {
 
 int[] arr;
-int head;
-int tail;
+int front;
+int rear;
+int size;
 
 public Queue(int x) {
   arr = new int[x];
-  head = 0;
-  tail = arr.length - 1;
+  front = 0;
+  rear = -1;
+  size = 0;
 }
 ```
 
@@ -34,8 +36,17 @@ Later, we go on to add the methods. To make it basic, we just put `add` and `rem
 
 ```java
 public int remove() {
+  int item = arr[front];
+  front++;
+  size--;
+  System.out.println("removed " + item);
+  return item;
 }
 
 public void add(int x) {
+  rear++;
+  arr[rear] = x;
+  size++;
+  System.out.println("added " + x);
 }
 ```
