@@ -50,3 +50,6 @@ public void add(int x) {
   System.out.println("added " + x);
 }
 ```
+
+Of course, we are not utilizing the array fully. We can add more stuff to do it. For now, we don't need that but if you are curious, let me know.
+Here, we also need to add `isEmpty()` and `isFull()` methods. You can write them by using the `size` variable on your own. Check out the *stack* code for help.
