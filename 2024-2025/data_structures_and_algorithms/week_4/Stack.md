@@ -176,7 +176,10 @@ You can try this code with the following examples:
 
 A good practice can be to write a test function to yourself and run that test function. You need to turn the *void* into *int* and create your own test function. After that, you can try to do it in Junit.
 
+---
 
+A somewhat visual example can be found at:
+https://kocatekin.github.io/apps/stack.html
 
 
 
