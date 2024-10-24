@@ -63,7 +63,7 @@ For example when we say `int x = 5` the right hand of the equation is the **type
 So we start creating the linkedlist.
 
 ```java
-class LinkedList {
+class ArelList {
     Node head;
     int size;
 }
@@ -72,7 +72,7 @@ class LinkedList {
 When we create a list, it must have something to build on. That is why we create a Node called *head* which represent the **head** node. We also have a size to get the size of the linkedlist.
 
 ```java
-public LinkedList() {
+public ArelList() {
     head = null; //there is a node, but it is null. there is no value
     size = 0; //at the start we dont have a size
 }
@@ -180,12 +180,59 @@ public String toString() { //override
 ```
 
 
+In the previous weeks, we implemented Stack and Queue by using arrays. Now, we can actually implement them using our own list structure. We will implement a stack using `ArelList`.
 
+```java
+class Stack {
+    ArelList al;
+    int size;
 
+    public Stack() {
+        al = new ArelList();
+        size = -1;
+    }
 
+    public void push(int x){
+        al.add(x);
+        size++;
+    }
 
+    public int pop() {
+        //how to do it?
+    }
+}
+```
 
+Well, up to this point we actually did not implement a `getElementByIndex` method in our ArelList. So, lets add it. We will name it `getElement(int index)`.
 
+```java
+public int getElement(int index){
+    if(index < 0 || index >= size){
+        return -1;
+    }
+    if(index == 0) {
+        return head.data;
+    }
+    else {
+        Node current = head;
+        for(int i=0;i<index;i++) { //not index-1 here
+            current = current.next;
+        }
+        return current.data;
+    }
+    }
+```
 
+Now, we can modify the `pop()` in the Stack.
 
+```java
+public int pop() {
+    int num = al.getElement(size);
+    al.removeAt(size); //we remove it
+    size--;
+    return num;
+}
+```
+
+We have a functioning Stack. 
 
