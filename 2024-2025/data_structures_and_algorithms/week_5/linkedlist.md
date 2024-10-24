@@ -14,4 +14,11 @@ Linked list is a data structure consisting of a collection of **nodes**, which t
 All nodes are serially linked. 
 
 
-In order to reach a node, you need to go through each node previous to it. 
+* Linked List is a **linear** data structure where elements are stored in **nodes**. Each node points to the **next** node in the sequence.
+* Different from *arrays* because they are not stored in **contiguous memory**. There is a **chain**. It is dynamic, can use any memory location available to it. That is why we can add more stuff.
+* Since it is **dynamic** it can grow and shrink as needed.
+* It is **efficient** in insertion and deletion. Why?
+
+
+
+
