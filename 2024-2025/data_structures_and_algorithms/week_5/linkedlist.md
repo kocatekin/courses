@@ -19,7 +19,41 @@ All nodes are serially linked.
 * Since it is **dynamic** it can grow and shrink as needed.
 * It is **efficient** in insertion and deletion. Why?
   * Because we are not **shifting** elements. In the ArrayList, since we are using a *static* structure; we need to shift the elements in the array. Otherwise, we would lose capacity. And shifting is an additional process.
-* 
+ * However, in arrays you can *directly* access to elements. Remember that we can just add the index number to the address of the first element, and we can access instantly `arr[2]`. Here, since they are not stored in *contiguous memory*, we need to go through all previous nodes to get to the node we want. Because every node only holds the address (reference) to the next node.
+ * Another small disadvantage is, here we have a *node* which holds a *value* **and** a reference to next node.
+
+
+
+For that reason, first we are going to have a *Node* class.
+```java
+class Node {
+ int data;
+ Node next;
+
+Node(int data) {
+ this.data = data;
+ this.next = null;
+ }
+}
+```
+
+Here, this node is going to be an element in the chain of elements. Every *value* we add is going to be added to the *data* part of the Node. The *next* is going to show the next element in the chain.
+
+Later, we are going to create our LinkedList data structure.
+
+```java
+class LinkedList {
+   Node head;
+
+public void 
+
+
+
+
+
+
+
+
 
 
 
