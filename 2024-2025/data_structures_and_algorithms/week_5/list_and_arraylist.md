@@ -99,6 +99,7 @@ public int remove (int index)
 {
   if(index < 0 || index >= size) {
     System.out.println("index out of range");
+    return -1;
   }
   int removedElement = data[index];
 
