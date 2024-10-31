@@ -5,7 +5,14 @@ Recursion means "defining a problem in terms of itself". This can be a very powe
 
 One of the most important thing in recursion is the **base case**. You must have a base case, otherwise the recursion will go on forever. You must exit at some point. 
 
-When solving a problem in a recursive way, you must call the parent function within the function. 
+So, we have a *base case* and a *recursive step*. Now, when we are writing functions in a mathematical form, the **right** way is to write the boundaries. However generally, we exclude them. It is a mistake. 
+
+For example let's think of the Fibonacci series:
+`F(3) = F(2) + F(1)` We can generalize this as: `F(n) = F(n-1) + F(n-2)`
+
+This looks correct, but we have no boundaries on $n$. This formula only works for when $n>=2$. So, there is our base case!
+
+Don't forget, when solving a problem in a recursive way, you must call the parent function within the function. 
 
 ## Examples
 
