@@ -111,4 +111,29 @@ public static int sumHelper(int[] arr, int idx)
 
 These are called *helper* functions in general. It would be wise to use them.
 
+Another example can be **reversing a string**. First, let's try to imagine it. For help, we are going to introduce two methods for string class. `charAt() and substring()`.
+
+```java
+String s = "tugberk";
+print(s.substring(1)); //prints ugberk
+print(s.charAt(0)); //prints t
+```
+
+So, when you look at this, it may give you some ideas.
+```
+Let's imagine a reversi(string s) function.
+reversi("tugberk") -> reversi("ugberk") + t
+reversi("ugberk") -> reversi("gberk") + u
+..
+```
+
+It will go on like this. This is the recursive case. We also need a **base case** to get out. Remember that in recursion we are getting closer and closer to the base case in every iteration. At some point, our string is going to be 1 char. So, that is a base case. Our string can also be a null so we will add that too:
+
+```java
+public static String reversi(String s) {
+  //base case
+  if(s.length() <= 1 || s == null) return s;
+  return reversi(s.substring(1)) + s.charAt(0);
+```
+
 
