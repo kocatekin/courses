@@ -14,6 +14,19 @@ This looks correct, but we have no boundaries on $n$. This formula only works fo
 
 Don't forget, when solving a problem in a recursive way, you must call the parent function within the function. 
 
+It is a method where a solution to a problem depends on solutions to smaller instances of the same problem. In simpler terms, recursion occurs when a function calls itself to work towards a solution.
+
+In recursion, the sub-problems must be identical in nature to the original problem, allowing the same solution approach to be applied.
+
+In recursive functions, the function calls itself in order to divide the problem into smaller sub-problems. Each recursive call **must** progress towards a **base case**. If not, the recursion will not stop. However, the recursion must stop at some point, at the point where the problem is in its simplest form. Otherwise, we will have a *stack overflow* error. Because every function is stored in the stack and in recursion, it fills up the stack with every function call. In that sense, recursion is expensive. 
+
+However, there are some cases where defining an *algorithm* is easier in recursion. For example, we did something similar in *binary search*. We will also see it a lot when we are using trees. 
+
+So, while *recursion* is costly, thinking in **recursive way** can help a programmer a lot. After that, we can always turn the solution into a faster, iterative way. Every function can be written in both ways. It is sometimes easier to select one over the other. 
+
+
+
+
 ## Examples
 
 **Factorial**
@@ -46,3 +59,5 @@ public static int sumOfNumbers(int x) {
     return x + sumOfNumbers(x-1);
 }
 ```
+
+
