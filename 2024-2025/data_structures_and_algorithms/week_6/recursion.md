@@ -72,6 +72,22 @@ public static int sumOfNumbers(int x) {
 
 Here, the solution is a little different. Before, every function we created got a single parameter. But this question cannot be solved by using a single parameter. We also need to give the index.
 
+Let's try to solve it first. Say that we want to get the sum of `3,4,5,6`. This actually means it is `3 + {4,5,6}`. Now, we have a new array: `4,5,6`. We can go as follows:
+
+```
+{3,4,5,6} -> 3 + {4,5,6}
+{4,5,6} -> 4 + {5,6}
+{5,6} -> 5 + {6}
+{6} -> 6 + {0}
+{0} -> 0 (base case)
+
+So, we now have our base case. That means {6} is 6.
+Therefore we go up now:
+{5,6} -> 5 + 6 = 11
+{4,5,6} -> 4 + 11 = 15
+{3,4,5,6} -> 3 + 15 = 18
+```
+
 ```java
 public static int sumArr(int[] arr, int idx) {
   if(idx < 0) return 0;
