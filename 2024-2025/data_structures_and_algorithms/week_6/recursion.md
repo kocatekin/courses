@@ -68,4 +68,31 @@ public static int sumOfNumbers(int x) {
 }
 ```
 
+**summing a list of numbers**
+
+Here, the solution is a little different. Before, every function we created got a single parameter. But this question cannot be solved by using a single parameter. We also need to give the index.
+
+```java
+public static int sumArr(int[] arr, int idx) {
+  if(idx < 0) return 0;
+  return arr[idx] + sumArr(arr, idx-1);
+```
+
+However, as a trick, we can create a new function with a *single* parameter and that can call this function we created instead!
+
+```java
+public static int sum(int[] arr)
+{
+  return sumHelper(arr, arr.length-1);
+}
+
+public static int sumHelper(int[] arr, int idx)
+{
+  if(idx < 0) return 0;
+  return arr[idx] + sumHelper(arr, idx-1);
+}
+```
+
+These are called *helper* functions in general. It would be wise to use them.
+
 
