@@ -5,6 +5,8 @@ Recursion means "defining a problem in terms of itself". This can be a very powe
 
 One of the most important thing in recursion is the **base case**. You must have a base case, otherwise the recursion will go on forever. You must exit at some point. 
 
+When solving a problem in a recursive way, you must call the parent function within the function. 
+
 ## Examples
 
 **Factorial**
