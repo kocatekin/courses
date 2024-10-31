@@ -25,6 +25,14 @@ However, there are some cases where defining an *algorithm* is easier in recursi
 So, while *recursion* is costly, thinking in **recursive way** can help a programmer a lot. After that, we can always turn the solution into a faster, iterative way. Every function can be written in both ways. It is sometimes easier to select one over the other. 
 
 
+* Base case is the simplest instance which can be solved without further recursion.
+* Acts as a stopping criteria for the function.
+* Recursive case is the part where recursion occurs.
+* Function calls itself but **with a different set of parameters**.
+* Each recursive case divides the problem into smaller parts.
+
+Every recursive function has **at least** two different returns. One of them will be the recursion case and the other, base case. 
+
 
 
 ## Examples
