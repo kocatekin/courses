@@ -75,10 +75,10 @@ Here, the solution is a little different. Before, every function we created got 
 Let's try to solve it first. Say that we want to get the sum of `3,4,5,6`. This actually means it is `3 + {4,5,6}`. Now, we have a new array: `4,5,6`. We can go as follows:
 
 ```
-{3,4,5,6} -> 3 + {4,5,6}
-{4,5,6} -> 4 + {5,6}
-{5,6} -> 5 + {6}
-{6} -> 6 + {0}
+{3,4,5,6} -> {3,4,5} + 6
+{3,4,5} -> {3,4} + 5
+{3,4} -> 3 + {4}
+{4} -> 4 + {0}
 {0} -> 0 (base case)
 
 So, we now have our base case. That means {6} is 6.
@@ -87,6 +87,8 @@ Therefore we go up now:
 {4,5,6} -> 4 + 11 = 15
 {3,4,5,6} -> 3 + 15 = 18
 ```
+
+So, by starting from the last element `arr.length-1` and decreasing it one in every recursion (moving in the array) we add each element to itself. When there is no element (`x<0`) we finish the function.
 
 ```java
 public static int sumArr(int[] arr, int idx) {
@@ -110,6 +112,8 @@ public static int sumHelper(int[] arr, int idx)
 ```
 
 These are called *helper* functions in general. It would be wise to use them.
+
+
 
 Another example can be **reversing a string**. First, let's try to imagine it. For help, we are going to introduce two methods for string class. `charAt() and substring()`.
 
