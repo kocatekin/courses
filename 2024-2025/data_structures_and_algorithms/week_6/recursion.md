@@ -43,9 +43,9 @@ Every recursive function has **at least** two different returns. One of them wil
 public static int factorial(p x)
 {
   if(x == 0) {
-    return 0;
+    return 1;
   }
-  return x * factorial(x);
+  return x * factorial(x-1);
 }
 ```
 
@@ -54,7 +54,7 @@ public static int factorial(p x)
 ```java
 public static int fibonacci(int x) {
   if(x==0) return 0;
-  if(x==1 || x==2) return 1;
+  if(x==1) return 1;
   return fibonacci(x-1) + fibonacci(x-2);
 }
 ```
