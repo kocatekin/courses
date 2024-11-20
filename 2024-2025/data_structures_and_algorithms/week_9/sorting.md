@@ -138,12 +138,55 @@ So, here how the code changes:
 
 ---
 
-## Merge Sort
+## Quick Sort
 
-A *divide and conquer* algorithm. It works by splitting an array into *smaller* subarrays, sorting them, and merging them back together. 
+In quick sort, we need to choose a **pivot**. We can choose any element we want here. It doesn't necessarily have to be the middle element. Most of the time, it is going to be in the wrong position. So, first we need to find the right position for the pivot element. That is called **partioning** because when we put the pivot in the place, it means that we partitioned the array into *left* and *right* parts, where all the elements in the *left* is smaller than the pivot; and all elements in the *right* are larger than pivot. 
 
-1. **Divide:** Split the array in halves recursively until each subarray contains a single element.
-2. **Conquer:** Sort the smaller subarrays during the merging.
-3. **Combine:** Merge the sorted subarrays.
+Later, we apply the same to each subpart recursively and find the sorted array.
+
+`7,2,1,8,6,3,5,4` Lets choose 4 as pivot.
+
+We need to pointers. These are going to point to the elements. Lets call them **lo** and **hi**, just like in binary search. 
+
+hi is going to show the last index in the array. lo is going to show the first, at first.
+We also have *i* where `iptr = lo - 1`
+
+First, we are going to go from 0 (lo) to last element (hi); and compare elements. If the element is larger than pivot, we don't do anything and continue. If the element is **smaller** than pivot, we increment `i` and do a swap between `i` and `j`.
+
+After that, when we finish all, the pivot is going to be at location `i+1`.
+
+```java
+public static int partition(int[] arr, int lo, int hi){
+	int pivot = arr[hi]; //selecting last element as pivot
+	int i = lo-1; //pointers for elements smaller than pivot
+
+	for(int j = lo; j < hi; j++){
+		if(arr[j] < pivot) {
+			i++;
+			arr = swap(i,j,arr);
+		}
+		System.out.println("After swap: " + Arrays.toString(arr));
+	}
+
+	//put the pivot in the right place --> hi was our pivot location, we swap it with i+1.
+	arr = swap(i+1,hi,arr); 
+	System.out.println("Pivot in right location: " + Arrays.toString(arr)); //2,1,3,4,6,7,5,8
+
+	return i+1; //because the pivot is not going to be at i, but next to i.
+}
+```
+
+So, we expect to see the pivot's location returning from this function.
+When we run it for `{7,2,1,8,6,3,5,4}` we get **3** in return. Which means we are going to put it at that location.
+
+
+So now, we have the pivot at the right place. It means that whatever we have on the left side is going to be smaller than pivot. Whatever we have on the right side, is going to be larger than pivot. 
+
+Now we need to add our *quicksort* algorithm. 
+
+This algorithm is going to apply itself to the left and right part.
+
+
+
 
 
