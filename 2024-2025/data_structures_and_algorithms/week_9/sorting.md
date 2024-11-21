@@ -1,5 +1,11 @@
 # Sorting
 
+## Information
+
+When I am uploading the code, I am using the wrong name most of the time. For example, if you look at the first line of the `quicksort.java` it will write `package bubblesort` and `public class Main`. Therefore, if you try to copy paste it all, it won't work. Please try to find a workaround to that. If you are not able to do it, it is bad.
+
+---
+
 ## Bubble sort
 
 We are using the swap algorithm from the previous code.
@@ -208,7 +214,175 @@ public static int[] quickSort(int[] arr, int lo, int hi){
 
 ## Merge Sort
 
+- Usually done recursively. Found by John Von Neumann.
+- Divide and conquer
+	- Divide it into smaller parts.
+
+```
+2,8,5,3,9,4,1,7
+
+2,8,5,3    9,4,1,7
+
+2,8   5,3   9,4   1,7
+
+2  8  5  3  9  4  1  7
+```
+
+After that, we start going up.
+
+```
+2,8   3,5   4,9   1,7
+```
+
+After that we go up again:
+
+```
+2,3,5,8   1,4,7,9
+```
+
+We do it again;
+
+```
+1,2,3,4,5,7,8,9
+```
+
+So we see that at the start, we need to divide the array into two halves.
+
+```java
+public static int[] mergeSort(int[] arr){
+
+	int n = arr.length;
+
+	int mid = n/2;
+	//we will have two arrays on left and right
+	/*
+	int[] left = Arrays.copyOfRange(arr,0,mid);
+	int[] right = Arrays.copyOfRange(arr,mid,n);
+	*/
+
+	//lets do it the manual way
+	int[] left = new int[mid];
+	int[] right = new int[mid];
+
+	//fill the left
+	for(int i=0;i<mid;i++){
+		left[i] = arr[i];
+	}
+
+	//fill the right
+	int j = 0;
+	for(int i=mid;i<n;i++){
+		right[j] = arr[i];
+		j++;
+	}
+}
+```
+
+At this point, we are able to halve the arrays into two parts, *left* and *right*.
+We need to do this recursively.
+
+So, 
+```java
+
+left = mergeSort(left);
+right = mergeSort(right);
+```
+At this point, if we run the program we will encounter an error. Yes, we did not put a return but it is simple. Just add `return arr`, the error is something else. The error is, the program will try to run forever and at some point we need to stop. Remember, it was called the **base case**. You will see the base case when you run the code like this.
+
+To solve that problem, we need to end the program when the *length* of the array is 1 or smaller. 
+So on top, we add
+```java
+if(arr.length <= 1){
+	return arr;
+}
+```
 
 
+At this point, our *mergeSort* code becomes:
+```java
+public static int[] mergeSort(int[] arr) {
+		
+	if(arr.length <= 1) {
+		return arr;
+	}
+		
+	int n = arr.length;
+	//divide the array into two halves
+	int mid = n/2;
+	int[] left = new int[mid];
+	int[] right = new int[mid];
+		
+	for(int i=0;i<mid;i++) {
+		left[i] = arr[i];
+	}
+	System.out.println("Left: " + Arrays.toString(left));
+		
+	int j = 0; 
+	for(int i=mid;i<n;i++) {
+		right[j] = arr[i];
+		j++;
+			
+	}
+	System.out.println("Right: " + Arrays.toString(right));
+		/*
+		 * the part above can also be implemented
+		 * by using Arrays.copyOfRange(arr,0,mid)
+		 * Arrays.copyOfRange(arr,mid,n)
+		 */
+		
+	left = mergeSort(left);
+	right = mergeSort(right);
+		
+	return arr;
+			
+	}
+```
 
 
+Okay, we did the first part. We divided the array into halves recursively. We need to *merge* it eventually. That is why, our return will change from `return arr` to `return merge(left, right)`. Remember, we divide the array and then we *merge* it by sorting. Now, we are going to write the `merge` function.
+
+Here, we are going to **compare** the elements of the array.
+We need three pointers for that. i, j and k. Why? 
+
+Well, we are *comparing* arrays to *i* will be a pointer for one array, *j* will be a pointer for another. *k* on the other hand will be a pointer for our final *merged* array. Remember, we are going to return *an* array, and it will be the **merged** one. So first, lets create the merged array.
+
+```java
+public static int[] merge(int[] left, int[] right){
+	int[] merged = new int[left.length + right.length];
+	int i=0;
+	int j=0;
+	int k=0;
+}
+```
+
+Then we start comparing. 
+We have two arrays to compare: left and right.
+```java
+//as long as we are in the array - we compare elements of left and right
+while(i < left.length && j < right.length) { 
+	
+	//compare left and right array
+	//if left is smaller, add left to merged -- else, add right to merged
+	if(left[i] <= right[j]) {
+		merged[k] = left[i]; 
+		k++; i++; 
+	}
+	else {
+		merged[k] = right[j];
+		k++; j++;
+	}
+}
+
+//there are still elements in the left and right
+	while(i < left.length){
+		merged[k] = left[i];
+		k++; i++;
+	}
+
+	//add remaining elements on the right
+	while(j < right.length){
+		merged[k] = right[j];
+		k++; j++;
+	}
+	return merged;
+```
