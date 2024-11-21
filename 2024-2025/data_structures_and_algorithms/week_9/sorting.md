@@ -186,6 +186,28 @@ Now we need to add our *quicksort* algorithm.
 
 This algorithm is going to apply itself to the left and right part.
 
+We have something similar to *binary search* here. Remember that in each part, we are going to select a pivot. So again, we have *left* and *right* parts, but we need to define them by using *lo* and *hi*. 
+
+So, our left is going to be from *lo* to *pivotindex-1* and our **right** is going to be from *pivotindex+1* to *hi*.
+
+```java
+public static int[] quickSort(int[] arr, int lo, int hi){
+	if(lo < hi) {
+		int pivotIndex = partition(arr, lo, hi);
+
+		//left and right
+		quickSort(arr, lo, pivotIndex-1);
+		quickSort(arr, pivotIndex+1,hi);
+	}
+	return arr;
+}
+```
+
+---
+
+
+## Merge Sort
+
 
 
 
