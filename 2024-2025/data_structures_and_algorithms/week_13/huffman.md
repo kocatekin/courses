@@ -33,3 +33,41 @@ However, is there a better way?
 Huffman encoding tells us that there is!
 
 Huffman encoding cares about the frequency of symbols. Frequency means how many times that symbol is seen in the text. If a symbol is repeated too much, we can represent it with less digits. It will have a very positive effect.
+
+So we see that:
+```
+char -- frequency
+A -- 3
+B -- 5
+C -- 6
+D -- 4
+E -- 2
+```
+
+If we were to order these in increasing order, we will have:
+
+E (2) - A (3) - D (4) - B (5) - C (6)
+Very similar to **optimal merge method**. We know how to solve it. We can apply greedy algorithm to solve this problem. 
+
+So, we first merge E and A. Then the outcome is merged with D. Later we merge B and C and merge all.
+This will create a tree. Like the tree we had before.
+By putting 0 and 1 in each side of the edge (left to right), we can actually create codes for the symbols.
+When we want to learn the code for A, we are going to move from the root to A --> 001. For B, it will be 10. C, 11. D, 01. E, 000.
+
+Now we have **variable length** instead of fixed length. Some symbols which are less frequent will have 3 digits, most frequents will have 2 digits.
+Since we know the frequency of each number we can calculate the length of the message.
+
+A is represented with 3 bits and occurs 3 times -> 9 total bits
+B is represented with 2 bits and occurs 5 times -> 10 total bits
+C is represented with 2 bits and occurs 6 times -> 12 total bits
+D -> 8 total bits
+E -> 6 total bits
+
+In total, it is 45 bits.
+Remember that we are going to send the table as well.
+5 symbols with ascii -> 40 bits.
+We have 3, 2, 2, 2, 3 bits --> 12 bits
+52 bits in total
+
+45 + 52 = 97 bits in total instead of the previous.
+So, we used huffman coding and implemented it by using greedy algorithm
