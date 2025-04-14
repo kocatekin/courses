@@ -128,10 +128,26 @@ paginate: true
 
 `assert` is used to validate conditions and assumptions during program execution. It is not used in production code but can be used in development process.
 
-If the assertion made is wrong, the program stops execution and it raises an `AssertionError`. If the assertion made is true, program continues execution. Therefore, sometimes it is also good to check the state.
+If the assertion made is wrong, the program stops execution and it raises an `AssertionError`. If the assertion made is true, program continues execution. Therefore, sometimes it is also good to check the state. 
+
+It is a tool to verify the assumptions in the code. Acts like a checkpoint: tests whether a given condition is true. If the condition **fails**, we will have an `AssertionError`, with a custom message. Helps catch bugs before they occur. 
+
+Imagine a very simple summation function:
+
+```python
+def sum(a,b):
+	return a + b
+
+# test cases using assert
+assert sum(2,3) == 5
+assert sum(0,0) == 0
+assert sum(-1,1) == 0
+print("everything is ok")
+```
+
+This will give no errors. If the calculation was wrong we would have assertionerrors.
 
 ---
-
 
 Assert is used as follows: `assert condition, message`
 
