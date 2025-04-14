@@ -1,5 +1,12 @@
 # Unit testing
 
+- Testing is important for every product. You would not want to fly in an **untested** aircraft. Untested means something *built*, but never verified. 
+
+- However, **individual parts** must be verified before **integrating** them with other parts.
+	- Later, we need to **verify** and **test** the **integrated** subsystems.
+ - If we test every part, we can make sure that they are working **independently**.
+    - That means if a new part breaks the system, the problem is related to the recently added part. We can now track down and fix it.
+
 
 ## Assert command
 
