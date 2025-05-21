@@ -209,6 +209,20 @@ However, should be noted that GPT or LLM's are very good at giving meaningful an
 Check out here for further honeypot examples: https://github.com/paralax/awesome-honeypots?tab=readme-ov-file
 
 
+---
+
+# Honeytoken
+
+* Honeytoken is a decoy—such as a fake document, API key, database entry, or email—that has no legitimate purpose in your system. When an attacker interacts with it, the action is immediately flagged as suspicious, alerting your security team.
+
+* Sometimes people share some images where the tokens and keys can be read.
+  * These can be fake!
+  * They will work but because they are keys to honeypots.
+
+* Common types of honeytokens are credentials (fake username, password, api token etc), documents (dummy files such as passwords.txt, financialreport.docx), fake rows in db, email addresses (unused) etc.
+
+* 
+
 
 
 
