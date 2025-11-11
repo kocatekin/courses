@@ -21,8 +21,6 @@
 * Handle different object types using one reference
 * Allow easy scalability (add new classes without changing existing code)
 
-e.g. If we add a new `DroneShipment` to a Logistics system, we don't need to change any code that already works with `Shipment`. 
-
 
 
 # Two types of polymorphism
