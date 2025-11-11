@@ -1,4 +1,4 @@
-# Interfaces 2
+# Interfaces
 
 ## What is an interface in Java?
 
