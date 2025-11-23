@@ -368,17 +368,5 @@ A system to browse movies, select seats, and book tickets.
 * Discounts
 * Booking history
 
----
-
-# 🎯 Final Notes
-
-You may pick **any** project, modify an idea, or combine multiple ideas. As long as your project:
-
-* Uses **OOP principles properly**
-* Has **multiple interacting classes**
-* Includes **interfaces, inheritance, and polymorphism**
-* Is fully your own work
-
-…it will be accepted.
 
 Good luck and have fun building your final project!
